@@ -169,6 +169,8 @@ class Nao:
 
     async def DeleteRolesExecute(self):
         cls()
+        await self.Scrape(guild)
+        time.sleep(2)
         roles = open('data/roles.txt')
         for role in roles:
             threading.Thread(target=self.DeleteRoles, args=(guild, role)).start()
